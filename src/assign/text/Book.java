@@ -27,7 +27,7 @@ public class Book {
 		File file = new File(BookUtil.directory);
 		List<String> allPages = new ArrayList<>();
 		try {
-			Stream.of(file.list((pFile, pString) -> pString.startsWith("page"))).forEach(allPages::add);
+			Stream.of(file.list((pFile, pString) -> pString.startsWith("Page"))).forEach(allPages::add);
 		}
 		catch (Exception e) {
 			System.out.println("No Pages Found!! \nCheck The Folder Structure For Reading The Pages.");

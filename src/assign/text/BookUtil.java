@@ -25,7 +25,7 @@ import java.util.Set;
 public class BookUtil {
 
 	// Please Change This As Per Respective Directory
-	static String directory = "D:\\Workspace_New\\WordCounter\\files\\";
+	static String directory = "D:\\Workspace_New\\WordCounter\\";
 
 	// To Store All Unique Words Across All Pages
 	static Set<String> allWords = new LinkedHashSet<>();
@@ -76,9 +76,9 @@ public class BookUtil {
 		
 		// Read Words From The Given Exclusion-List File
 		try {
-			String excl = new String(Files.readAllBytes(Paths.get(directory + "exclusion-list.txt")),
+			String excl = new String(Files.readAllBytes(Paths.get(directory + "exclude-words.txt")),
 					StandardCharsets.UTF_8);
-			excl = excl.replaceAll("[!?,.]", "");
+			excl = excl.replaceAll("[)(_-!?,.-]:\"", "");
 			tmpExcl = excl.split("\\s+");
 		}
 		catch (Exception e) {
@@ -119,7 +119,7 @@ public class BookUtil {
 	 */
 	public static void writeDataToFile(LinkedHashMap<String, HashSet<Integer>> output) throws IOException {
 
-		FileOutputStream fos = new FileOutputStream(new File("files\\index.txt"));
+		FileOutputStream fos = new FileOutputStream(new File(directory+"index.txt"));
 		BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(fos));
 
 		// Traverse to Get All The Words
