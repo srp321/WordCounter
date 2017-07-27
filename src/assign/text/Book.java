@@ -14,6 +14,9 @@ import java.util.stream.Stream;
  * are Written, Similar to a Glossary of any Book 
  * Input: Set Of Valid Pages; One Exclusion-List 
  * Output: File With List of All Words with Page Numbers
+ * 
+ * Note: Please Set The Folder Path Correctly in BookUtil.java Before Program Execution
+ * 
  * @author Shashi
  */
 public class Book {
